@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark/Light-Switch</title>
+    <style>
+      .container {
+        height: 95vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #btn{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        box-shadow: 20px 20px 60px #00000046;
+        box-shadow: inset -20px -20px -60px #b2b2b25e;
+        text-align: center;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 1rem;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="btn" onclick="change">Dark</button>
+
+    </div>
+
+    <script>
+      let btn = document.getElementById("btn");
+
+      function change() {
+        btn.addEventListener("click", function () {
+          let isDark = document.body.style.backgroundColor === "black";
+
+          if (isDark) {
+            document.body.style.backgroundColor = "White";
+            btn.style.backgroundColor="white"
+            btn.style.color="black"
+            btn.innerText = "Dark";
+          } else {
+            document.body.style.backgroundColor = "black";
+            btn.style.backgroundColor="#0d0d0d";
+            btn.style.color="white";
+            btn.innerText = "Light";
+          }
+        });
+      }
+      change();
+    </script>
+  </body>
+</html>
